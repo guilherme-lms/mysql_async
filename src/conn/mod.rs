@@ -242,7 +242,7 @@ impl Conn {
         self.inner.reset_upon_returning_to_a_pool = reset_connection;
     }
 
-    pub(crate) fn stream_mut(&mut self) -> Result<&mut Stream> {
+    pub fn stream_mut(&mut self) -> Result<&mut Stream> {
         self.inner.stream_mut()
     }
 
