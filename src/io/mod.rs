@@ -48,7 +48,7 @@ use crate::{
 #[cfg(unix)]
 use crate::io::socket::Socket;
 
-mod tls;
+pub mod tls;
 
 macro_rules! with_interrupted {
     ($e:expr) => {
@@ -61,14 +61,14 @@ macro_rules! with_interrupted {
     };
 }
 
-mod read_packet;
-mod socket;
-mod write_packet;
+pub mod read_packet;
+pub mod socket;
+pub mod write_packet;
 
 #[derive(Debug)]
 pub struct PacketCodec {
-    inner: PacketCodecInner,
-    decode_buf: PooledBuf,
+    pub inner: PacketCodecInner,
+    pub decode_buf: PooledBuf,
 }
 
 impl Default for PacketCodec {

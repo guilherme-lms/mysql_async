@@ -434,22 +434,22 @@ pub use mysql_common::{constants as consts, params};
 
 use std::sync::Arc;
 
-mod buffer_pool;
+pub mod buffer_pool;
 
 #[macro_use]
-mod tracing_utils;
+pub mod tracing_utils;
 
 #[macro_use]
-mod macros;
+pub mod macros;
 pub mod conn;
-mod connection_like;
+pub mod connection_like;
 /// Errors used in this crate
-mod error;
+pub mod error;
 pub mod io;
-mod local_infile_handler;
-mod opts;
-mod query;
-mod queryable;
+pub mod local_infile_handler;
+pub mod opts;
+pub mod query;
+pub mod queryable;
 
 type BoxFuture<'a, T> = futures_core::future::BoxFuture<'a, Result<T>>;
 
