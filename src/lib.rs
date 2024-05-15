@@ -441,11 +441,11 @@ mod tracing_utils;
 
 #[macro_use]
 mod macros;
-mod conn;
+pub mod conn;
 mod connection_like;
 /// Errors used in this crate
 mod error;
-mod io;
+pub mod io;
 mod local_infile_handler;
 mod opts;
 mod query;
