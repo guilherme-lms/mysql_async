@@ -118,7 +118,7 @@ impl Encoder<PooledBuf> for PacketCodec {
 
 #[pin_project(project = EndpointProj)]
 #[derive(Debug)]
-pub(crate) enum Endpoint {
+pub enum Endpoint {
     Plain(Option<TcpStream>),
     #[cfg(feature = "native-tls-tls")]
     Secure(#[pin] tokio_native_tls::TlsStream<TcpStream>),

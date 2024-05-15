@@ -22,7 +22,7 @@ use tokio::io::{AsyncRead, AsyncWrite};
 /// Unix domain socket connection on unix, or named pipe connection on windows.
 #[pin_project]
 #[derive(Debug)]
-pub(crate) struct Socket {
+pub struct Socket {
     #[pin]
     #[cfg(unix)]
     inner: tokio::net::UnixStream,
