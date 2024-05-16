@@ -354,8 +354,8 @@ impl Stream {
         }
     }
 
-    pub fn codec(&self) -> Option<&Box<Framed<Endpoint, PacketCodec>>> {
-        self.codec.as_ref()
+    pub fn codec(&mut self) -> Option<&mut Box<Framed<Endpoint, PacketCodec>>> {
+        self.codec.as_mut()
     }
 
     pub(crate) async fn connect_tcp(
