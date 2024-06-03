@@ -410,7 +410,7 @@ impl Conn {
         self.inner.infile_handler = Some(Box::pin(handler));
     }
 
-    fn take_stream(&mut self) -> Stream {
+    pub fn take_stream(&mut self) -> Stream {
         self.inner.stream.take().unwrap()
     }
 
